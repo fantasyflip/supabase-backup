@@ -40,7 +40,7 @@ for i in databases:
         logging.error(f"Database {i['name']} has failed to dump.")
     
    # if its the first date of the month, copy dump into 'monthly' folder
-    if date.today().day == 8:
+    if date.today().day == 1:
         monthlyPath = f"{path}/monthly"
         if not os.path.isdir(monthlyPath):
             os.makedirs(monthlyPath)
@@ -61,7 +61,7 @@ for i in databases:
             logging.info(f"Database {i['name']} has not deleted the oldest dump as there are less than 6 dumps.")
     
     # if its the first day of the week, move dump into 'weekly' folder
-    if date.today().weekday() == 4:
+    if date.today().weekday() == 0:
         weeklyPath = f"{path}/weekly"
         if not os.path.isdir(weeklyPath):
             os.makedirs(weeklyPath)
